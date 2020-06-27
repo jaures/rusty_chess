@@ -31,7 +31,12 @@ fn main() {
 
     println!("Knight:\n");
     for (i, a) in moves::knight_moves().iter().enumerate() {
-        println!("Position: {} - {}",i, a);
+        //println!("Position: {} - {}",i, a);
+    }
+
+    println!("Pawns:\n");
+    for (i, a) in moves::pawn_moves().iter().enumerate() {
+        println!("Position: {}. {} | {}",i, a.0, a.1);
     }
 
 }

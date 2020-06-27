@@ -66,3 +66,19 @@ pub fn knight_moves() -> [u64;64] {
 
     return res;
 }
+
+pub fn pawn_moves() -> [(u64, u64);64] {
+    const PN_ATK:u64 =  0x280;
+    const PN_MSK:u64 =  0x1f1f1f1f1f1f1f1f;
+    
+    let mut res: [(u64,u64);64] = [(0,0);64];
+    
+    for pos in 8..56_usize {
+        res[pos] = (
+            (1 << (pos + 8)) | ((1 >> pos) << (8 + pos)),
+            (PN_ATK << pos) & (PN_MSK << (pos & 0x6))
+        );
+    }
+
+    return res;
+}

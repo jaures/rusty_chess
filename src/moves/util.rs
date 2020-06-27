@@ -38,7 +38,7 @@
 * @param val any bitboard
 * @return bitboard val flipped about diagonal a1-h8
 */
-pub fn flip_diag_A1H8(val: u64) -> u64 {
+pub fn flip_diag_a1h8(val: u64) -> u64 {
    const K1: u64 = 0xaa00aa00aa00aa00;
    const K2: u64 = 0xcccc0000cccc0000;
    const K4: u64 = 0xf0f0f0f00f0f0f0f;
@@ -61,7 +61,7 @@ pub fn flip_diag_A1H8(val: u64) -> u64 {
  * @param val any bitboard
  * @return bitboard val flipped about anti-diagonal a8-h1
  */
- pub fn flip_diag_A8H1(val: u64) -> u64 {
+ pub fn flip_diag_a8h1(val: u64) -> u64 {
    const K1: u64 = 0x5500550055005500;
    const K2: u64 = 0x3333000033330000;
    const K4: u64 = 0x0f0f0f0f00000000;
@@ -108,7 +108,7 @@ pub fn rotate180 (val: u64) -> u64 {
  * @return bitboard val rotated 90 degrees clockwise
  */
  pub fn rotate90_clockwise (val: u64) -> u64 {
-   return flip_vertical (flip_diag_A1H8 (val) );
+   return flip_vertical (flip_diag_a1h8 (val) );
 }
 
 /**
@@ -117,5 +117,5 @@ pub fn rotate180 (val: u64) -> u64 {
  * @return bitboard val rotated 90 degrees anticlockwise
  */
  pub fn rotate90_anti_clockwise (val: u64) -> u64 {
-   return flip_vertical (flip_diag_A8H1 (val) );
+   return flip_vertical (flip_diag_a8h1 (val) );
 }
